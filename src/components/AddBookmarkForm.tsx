@@ -17,13 +17,13 @@ export default function AddBookmarkForm() {
                 await addBookmark(formData)
                 formRef.current?.reset()
             }}
-            className="p-6 bg-gray-900/50 backdrop-blur-xl rounded-2xl border border-gray-800 space-y-4"
+            className="p-6 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-gray-800 space-y-4 shadow-sm dark:shadow-none"
         >
             <div className="flex items-center gap-2 mb-4">
-                <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400">
+                <div className="p-2 bg-blue-500/10 rounded-lg text-blue-600 dark:text-blue-400">
                     <Plus className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-200">Add New Bookmark</h3>
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-200">Add New Bookmark</h3>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -32,14 +32,14 @@ export default function AddBookmarkForm() {
                     type="text"
                     placeholder="Website Title"
                     required
-                    className="w-full px-4 py-3 bg-gray-950/50 border border-gray-800 rounded-xl text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-600"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-800 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600"
                 />
                 <input
                     name="url"
                     type="url"
                     placeholder="https://example.com"
                     required
-                    className="w-full px-4 py-3 bg-gray-950/50 border border-gray-800 rounded-xl text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-600"
+                    className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-800 rounded-xl text-gray-900 dark:text-white focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all placeholder:text-gray-400 dark:placeholder:text-gray-600"
                 />
                 <button
                     type="submit"

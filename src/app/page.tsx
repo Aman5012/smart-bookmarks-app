@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import { signOut } from './auth/actions'
 import ClientBookmarkList from '@/components/BookmarkList'
 import AddBookmarkForm from '@/components/AddBookmarkForm'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 
 export default async function Dashboard() {
@@ -23,20 +24,23 @@ export default async function Dashboard() {
     .order('created_at', { ascending: true })
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white p-8 transition-colors duration-300">
       <div className="max-w-4xl mx-auto space-y-8">
-        <header className="flex items-center justify-between p-6 bg-gray-900/50 backdrop-blur-xl rounded-2xl border border-gray-800">
+        <header className="flex items-center justify-between p-6 bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm dark:shadow-none">
           <div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-emerald-400 bg-clip-text text-transparent">
               My Smart Bookmarks
             </h1>
-            <p className="text-sm text-gray-400">{user.email}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400">{user.email}</p>
           </div>
-          <form action={signOut}>
-            <button className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
-              Sign Out
-            </button>
-          </form>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <form action={signOut}>
+              <button className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                Sign Out
+              </button>
+            </form>
+          </div>
         </header>
 
         <main className="space-y-8">
